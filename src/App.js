@@ -7,6 +7,7 @@ import TopHead from './components/TopHead/TopHead'
 import Nav from './components/Nav/Nav'
 import Rank from './pages/Rank'
 import NotFound from './pages/NotFound'
+import CopyRight from './components/CopyRight/CopyRight'
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                         </Route>
                     </Switch>
                 </div>
+                <CopyRight/>
             </BrowserRouter>
         </div>
     )
