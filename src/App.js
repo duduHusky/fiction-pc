@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import 'antd/dist/antd.css'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import TopNav from './components/TopNav/TopNav'
+import TopHead from './components/TopHead/TopHead'
+import Nav from './components/Nav/Nav'
+import Rank from './pages/Rank'
+import NotFound from './pages/NotFound'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <TopNav/>
+                <TopHead/>
+                <Nav/>
+                <div className="content">
+                    <Switch>
+                        <Route exact path="/">
+                            <Home/>
+                        </Route>
+                        <Route path="/rank">
+                            <Rank/>
+                        </Route>
+                        <Route path="*">
+                            <NotFound/>
+                        </Route>
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        </div>
+    )
 }
 
-export default App;
+export default App
