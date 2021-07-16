@@ -1,0 +1,11 @@
+.home-page{
+  display: flex;
+  justify-content: space-between;
+
+  .head-show{
+    display: flex;
+    .middle{
+      width: 700px;
+    }
+  }
+}

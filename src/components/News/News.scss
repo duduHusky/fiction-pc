@@ -1,0 +1,35 @@
+.news{
+  width: 700px;
+  height: 150px;
+  background-color: #fff;
+  margin: 10px 10px 0;
+
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0 19px 22px;
+    color: #323237;
+    font-size: 18px;
+
+    .more{
+      color: #999;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
+
+  .list{
+    list-style: none;
+    padding-left: 22px;
+
+    li{
+      margin-bottom: 14px;
+
+      a{
+        color: #929297;
+        margin-left: 5px;
+      }
+    }
+  }
+}

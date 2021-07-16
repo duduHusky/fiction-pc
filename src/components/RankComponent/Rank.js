@@ -30,7 +30,7 @@ function RankIndex() {
 
     return <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {
-            data.map((item, k) => <RankCon key={k} title={item.title} url={item.url} items={item.items}/>)
+            data.map((item, k) => <RankCon key={k} title={item.title} url={item.url} items={item.items} showMore />)
         }
     </div>
 }

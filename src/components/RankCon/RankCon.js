@@ -2,11 +2,10 @@ import {Link} from 'react-router-dom'
 import './RankCo.scss'
 
 function RankCon(props) {
-    return <div className="rank-con">
+    return <div className="rank-con" style={{width: props.width}}>
         <div className="title">
-            {/*<span className="title-icon"></span>*/}
             <span className="title-text">{props.title}</span>
-            <Link to={props.url} className="more">更多+</Link>
+            { props.showMore && <Link to={props.url} className="more">更多+</Link>}
         </div>
         <ul>
             {
@@ -20,6 +19,11 @@ function RankCon(props) {
             }
         </ul>
     </div>
+}
+
+RankCon.defaultProps = {
+    width: '290px',
+    showMore: false
 }
 
 export default RankCon;

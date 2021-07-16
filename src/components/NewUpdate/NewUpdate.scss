@@ -1,0 +1,52 @@
+.new-update{
+  width: 950px;
+  padding: 0 20px;
+  background-color: #ffffff;
+
+  .update-title{
+    font-size: 18px;
+    color: #323237;
+    padding: 20px 0 12px 0;
+  }
+
+  .update-list{
+    list-style: none;
+    margin-bottom: 20px;
+    width: 910px;
+    display: inline-block;
+
+    li {
+      border-bottom: 1px solid #e9e9e9;
+
+      .category{
+        display: inline-block;
+        color: #333;
+        width: 70px;
+      }
+
+      .title{
+        display: inline-block;
+        color: #333;
+        width: 200px;
+        font-size: 16px;
+      }
+
+      .chapter-name{
+        width: 430px;
+        display: inline-block;
+        color: #333;
+      }
+
+      .author{
+        width: 100px;
+        display: inline-block;
+        color: #333;
+      }
+
+      .time{
+        width: 100px;
+        display: inline-block;
+      }
+    }
+  }
+}
