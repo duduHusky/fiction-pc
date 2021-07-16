@@ -1,0 +1,23 @@
+.nav {
+  height: 50px;
+  background-color: #F55;
+  display: flex;
+  justify-content: center;
+
+  .nav-list {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+
+    a{
+      height: 100%;
+      line-height: 50px;
+      padding: 0 20px;
+      color: #fff;
+
+      &.active{
+        background-color: #AB3939;
+      }
+    }
+  }
+}
