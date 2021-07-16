@@ -1,18 +1,23 @@
 .rank-con{
-  width: 290px;
-  margin: 0 20px 20px 0;
+  //width: 290px;
+  margin: 0 10px 20px 10px;
+  background-color: #ffffff;
+  padding: 10px 10px 0;
 
   .title{
     display: flex;
     align-items: center;
     border-bottom: 1px solid #E9E9E9;
     padding-bottom: 8px;
+    margin-top: 6px;
 
     .title-text{
       font-size: 18px;
       font-weight: 700;
       color: #323237;
       flex: 1;
+      display: flex;
+      align-items: center;
 
       &:before{
         display: inline-block;
@@ -55,6 +60,9 @@
       .book-title{
         flex: 1;
         color: #626267;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       .author{
