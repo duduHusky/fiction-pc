@@ -1,0 +1,79 @@
+.featured {
+  width: 950px;
+  padding: 0 20px;
+  margin-top: 20px;
+  background-color: #fff;
+
+  .title {
+    padding-top: 20px;
+    padding-bottom: 9px;
+    font-size: 18px;
+    color: #323237;
+    font-weight: 700;
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: 303px;
+      height: 180px;
+      padding: 10px;
+
+
+      display: flex;
+
+      .cover {
+        width: 114px;
+        height: 160px;
+        margin-right: 19px;
+      }
+
+      .info {
+        width: 144px;
+        height: 152px;
+
+        .book-title {
+          display: block;
+          font-weight: 700;
+          color: #323237;
+          font-size: 16px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        .author {
+          margin-top: 8px;
+          color: #626267;
+          display: flex;
+
+          .author-text {
+            margin-left: 8px;
+            color: #626267;
+          }
+        }
+
+        .desc {
+          color: #999;
+          width: 144px;
+          height: 70px;
+          margin: 10px 0;
+          font-size: 12px;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 4;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .to-read {
+          color: #333;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

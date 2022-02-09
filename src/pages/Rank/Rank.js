@@ -1,9 +1,9 @@
-import TopList from '../components/TopList/TopList'
+import TopList from '../../components/TopList/TopList'
 import {Route, Switch, useRouteMatch} from 'react-router-dom'
-import RankIndex from '../components/RankComponent/Rank'
+import RankIndex from '../../components/RankComponent/Rank'
 import './Rank.scss'
-import SortList from '../components/SortList/SortList'
-import RankIn from '../components/RankComponent/RankIn'
+import SortList from '../../components/SortList/SortList'
+import RankIn from '../../components/RankComponent/RankIn'
 
 function Rank() {
     let {path} = useRouteMatch()
