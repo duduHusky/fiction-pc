@@ -2,15 +2,16 @@ import {Input, Button} from 'antd'
 import {SearchOutlined, UserOutlined, DatabaseOutlined, HistoryOutlined} from '@ant-design/icons'
 
 import './TopHead.scss'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 const {Search} = Input
 
 function TopHead() {
+    const history = useHistory()
 
     const onSearch = (value) => {
         if(!value) return false
-        console.log(value)
+        history.push(`/search?query=${value}`)
     }
 
     const searchButton = (
