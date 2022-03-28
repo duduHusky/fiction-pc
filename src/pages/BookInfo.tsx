@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import FontIcons from "../components/FontIcons";
+import ChapterList from "../components/ChapterList";
 
 const BookInfo = () => {
 	return <>
@@ -77,6 +78,13 @@ const BookInfo = () => {
 					<span className="text-[14px] text-[#626267] mr-2.5">参评人数:</span>
 					<span className="text-[14px] text-[#323237]"><span className="num-star-people">0</span> 人</span>
 				</div>
+			</div>
+		</div>
+		<div className="chapter mt-2.5 bg-white p-5">
+			<div className="mb-5 text-[18px] text-[#f55] border-b-4	border-b-[#f55]">章节目录</div>
+			<div className="content">
+				<ChapterList section={"最新章节"} chapterList={[]} />
+				<ChapterList section={"章节列表"} chapterList={[]} />
 			</div>
 		</div>
 	</>
