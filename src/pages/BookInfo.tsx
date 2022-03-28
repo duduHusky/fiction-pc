@@ -86,6 +86,12 @@ const BookInfo = () => {
 				<ChapterList section={"最新章节"} chapterList={[]} />
 				<ChapterList section={"章节列表"} chapterList={[]} />
 			</div>
+			<div className="mb-5 text-[18px] text-[#f55] border-b-4	border-b-[#f55]">评论区</div>
+			<div className="content flex flex-col">
+				<div className="text-[#f55] pl-4 bg-[#F9F9F9] h-14 leading-[3.5rem]">全部评论(0)条</div>
+				<textarea rows={5} className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-2 ring-1 ring-slate-200 shadow-sm mt-7 resize-none" />
+				<button className="h-10 w-24 px-6 rounded-md bg-[#f55] text-white mt-2.5 self-end">发表</button>
+			</div>
 		</div>
 	</>
 }
