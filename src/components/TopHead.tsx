@@ -1,8 +1,16 @@
 import logo from '../static/images/logo.png'
 import FontIcons from "./FontIcons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function TopHead() {
+	const navigate = useNavigate()
+	const [searchWord, setSearchWord] = useState<string>("")
+
+	const search = () => {
+		searchWord && navigate(`/search/result?keyword=${searchWord}`)
+	}
+
 	return <div className="bg-white flex justify-center">
 		<div className="w-[75rem] flex justify-between">
 			<div className="my-4 flex flex-1">
@@ -10,8 +18,11 @@ export default function TopHead() {
 				<div className="w-full self-center flex">
 					<input
 						className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-3 ring-1 ring-slate-200 shadow-sm"
-						type="text" aria-label="Filter projects" placeholder="请输入要搜索的书名"/>
-					<button className="bg-[#f55] w-11 h-11 ml-2 rounded-md">
+						type="text" aria-label="Filter projects" placeholder="请输入要搜索的书名"
+						value={searchWord}
+						onChange={event => setSearchWord(event.target.value)}
+					/>
+					<button className="bg-[#f55] w-11 h-11 ml-2 rounded-md" onClick={search}>
 						<FontIcons name="magnifying-glass" color="#fff" />
 					</button>
 				</div>

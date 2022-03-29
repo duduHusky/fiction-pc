@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import BookInfo from "./pages/BookInfo";
 import BookRead from "./pages/BookRead";
+import SearchResult from "./pages/SearchResult";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route index element={<Home />}/>
 					<Route path=":bookId" element={<BookInfo />} />
 					<Route path=":bookId/read_:chapterId" element={<BookRead />} />
+					<Route path="search/result" element={<SearchResult />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
