@@ -1,6 +1,6 @@
 import { FunctionComponent} from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { hasToken } from "../utils/user";
+import { hasToken } from "../utils/permission";
 
 interface AuthRouteProps {
 	component: FunctionComponent
