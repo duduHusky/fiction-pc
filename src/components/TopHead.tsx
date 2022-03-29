@@ -30,13 +30,13 @@ export default function TopHead() {
 			<ul className="ml-16 flex items-center">
 				<li className="mr-7">
 					<FontIcons name="r-circle-user" color="#f55" />
-					<Link title="登录" to="/user/auth/login.html" className="ml-2 text-[14px] text-[#f55]">登录</Link>
+					<Link title="登录" to="/login" className="ml-2 text-[14px] text-[#f55]">登录</Link>
 					<span className="text-[#f55] mx-1">|</span>
 					<Link title="注册" to="/user/auth/register.html" className="text-[14px] text-[#f55]">注册</Link>
 				</li>
 				<li className="mr-7">
 					<FontIcons name="books" color="#929297" />
-					<Link to="/user/mark/index.html" className="ml-2 text-[14px] text-[#929297]">我的书架</Link>
+					<Link to="/shelf" className="ml-2 text-[14px] text-[#929297]">我的书架</Link>
 				</li>
 				<li className="inline-block">
 					<FontIcons name="r-clock" color="#929297" />
