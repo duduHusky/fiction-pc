@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import classNames from "classnames"
+
+const defaultClassName = "flex items-center px-5 h-full"
 
 const Nav = () => {
 	return <div className="bg-[#f55] text-white flex justify-center">
@@ -10,7 +13,7 @@ const Nav = () => {
 			<NavLink title="书单" to="/booklist.html" className="flex items-center px-5 h-full hover:bg-[#AB3939]">书单</NavLink>
 			<NavLink title="专题" to="/special.html" className="flex items-center px-5 h-full hover:bg-[#AB3939]">专题</NavLink>
 			<NavLink title="原创专区" to="/author/author/index.html" target="_blank" className="flex items-center px-5 h-full hover:bg-[#AB3939] ml-auto">原创专区</NavLink>
-			<NavLink title="用户中心" to="/user/index/index.html" className="flex items-center px-5 h-full hover:bg-[#AB3939]">用户中心</NavLink>
+			<NavLink title="用户中心" to="/user" className={({isActive}) => isActive ? classNames(defaultClassName, "bg-[#AB3939]"): defaultClassName}>用户中心</NavLink>
 		</div>
 	</div>
 }

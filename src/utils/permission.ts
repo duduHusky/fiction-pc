@@ -9,3 +9,7 @@ export const hasToken = (): boolean => {
 export const getToken = (): string => {
 	return Cookies.get(TOKEN_NAME) ?? ""
 }
+
+export const setToken = (token: string) => {
+	Cookies.set(TOKEN_NAME, token)
+}
