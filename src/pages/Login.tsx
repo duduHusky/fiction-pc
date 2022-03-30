@@ -2,16 +2,29 @@ import logo from '../static/images/logo.png'
 import { Link, useLocation } from "react-router-dom"
 import CopyRight from "../components/CopyRight"
 import { useState } from "react"
-import { login } from "../service/user"
+import { getInfo, login } from "../service/user"
+import { useDispatch } from "react-redux"
+import { setInfo, setToken } from "../store/user/userSlice"
+import classNames from "classnames"
+import FontIcons from "../components/FontIcons"
 
 const Login = () => {
 	const location = useLocation()
+	const dispatch = useDispatch()
+
 	const [username, setUsername] = useState<string>("")
 	const [password, setPassword] = useState<string>("")
+	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	const Login = async () => {
+		setIsLoading(true)
 		const res = await login({username, password})
 		console.log(res)
+		dispatch(setToken(res.data.token))
+		const info = await getInfo()
+		console.log(info)
+		dispatch(setInfo(info.data))
+		setIsLoading(false)
 	}
 
 	return <div className="flex flex-col">
@@ -40,8 +53,8 @@ const Login = () => {
 							value={password}
 							onChange={event => setPassword(event.target.value)}
 						/>
-						<button className="h-10 px-6 font-semibold rounded-md bg-[#f55] text-white mt-9 mb-5"
-								onClick={Login}>登录
+						<button className={classNames("h-10 px-6 font-semibold rounded-md bg-[#f55] text-white mt-9 mb-5", {"opacity-40": isLoading})} onClick={Login} disabled={isLoading}>
+							{isLoading ? <FontIcons name="spinner" className="animate-spin" /> : "登录"}
 						</button>
 						<div className="text-[14px] text-[#929297] pb-20 self-end">
 							<Link to="/register">注册账号</Link>

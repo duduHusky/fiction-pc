@@ -14,5 +14,18 @@ export default [
 				}
 			}
 		}
+	},
+	{
+		url: '/user/info',
+		type: 'get',
+		response: () => {
+			return {
+				code: 0,
+				data: {
+					name: Random.name(),
+					avatar: 'http://f.vtmtea.com/static/image/noavatar.gif'
+				}
+			}
+		}
 	}
 ]
