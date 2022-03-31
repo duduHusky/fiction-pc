@@ -33,12 +33,12 @@ export default function TopHead() {
 			</div>
 			<ul className="ml-16 flex items-center">
 				<li className="mr-7">
-					{isLogin && userInfo?.avatar ?
-						<img src={userInfo.avatar} height={20} width={20} className="inline-block rounded-full"/> :
+					{isLogin && userInfo?.portrait ?
+						<img src={userInfo.portrait} height={20} width={20} className="inline-block rounded-full"/> :
 						<FontIcons name="r-circle-user" color="#f55"/>
 					}
 					<Link title="登录" to="/login"
-						  className="ml-2 text-[14px] text-[#f55]">{userInfo?.name ?? "登录"}</Link>
+						  className="ml-2 text-[14px] text-[#f55]">{userInfo?.nickname ?? "登录"}</Link>
 					<span className="text-[#f55] mx-1">|</span>
 					<Link title="注册" to="/user/auth/register.html"
 						  className="text-[14px] text-[#f55]">{isLogin ? "充值" : "注册"}</Link>

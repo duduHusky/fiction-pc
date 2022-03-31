@@ -8,7 +8,7 @@ import { setInfo, setToken } from "../store/user/userSlice"
 import classNames from "classnames"
 import FontIcons from "../components/FontIcons"
 import { setToken as setCookieToken } from "../utils/permission"
-
+import { LoginResponseDataState, ResponseState, UserInfoDataState } from "../service/serviceInterface"
 
 const Login = () => {
 	const location = useLocation()
@@ -21,10 +21,15 @@ const Login = () => {
 
 	const Login = async () => {
 		setIsLoading(true)
-		const res = await login({ username, password })
-		dispatch(setToken(res.data.token))
+		const res: ResponseState<LoginResponseDataState> = await login({ username, password })
+		if (res.code > 0) {
+			setIsLoading(false)
+			alert(res.message)
+			return
+		}
+		dispatch(setToken(res.data?.token))
 		setCookieToken(res.data.token)
-		const info = await getInfo()
+		const info: ResponseState<UserInfoDataState> = await getInfo()
 		dispatch(setInfo(info.data))
 		setIsLoading(false)
 		navigate(location.state as string ?? "/", { replace: true })

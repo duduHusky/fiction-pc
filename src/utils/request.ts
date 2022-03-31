@@ -2,6 +2,7 @@ import axios from "axios"
 import { getToken } from "./permission"
 
 const service = axios.create({
+	baseURL: 'http://localhost:9000/v1',
 	timeout: 500
 })
 
@@ -9,7 +10,7 @@ service.interceptors.request.use(
 	config => {
 		const token = getToken()
 		if (token && config.headers) {
-			config.headers["X-Token"] = token
+			config.headers["Authorization"] = `Bearer ${token}`
 		}
 		return config
 	},

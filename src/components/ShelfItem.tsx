@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"
 
 const ShelfItem = () => {
+	const navigate = useNavigate()
+
+	const goRead = () => {
+		navigate(`/1/read_10`)
+	}
+
 	return <div className="my-5 flex">
 		<img src="https://www.xbiquwx.la/files/article/image/80/80275/80275s.jpg" alt="稳住别浪" className="w-20 h-28 mr-7" />
 		<div className="flex flex-col justify-between">
@@ -15,7 +21,7 @@ const ShelfItem = () => {
 			<div className="text-[14px] text-[#999]">书签： <Link to="/" className="text-[#f55]">第四百四十四章 【她是你的“锚”】</Link></div>
 		</div>
 		<div className="flex flex-col justify-around ml-auto">
-			<button className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]">继续阅读</button>
+			<button className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]" onClick={goRead}>继续阅读</button>
 			<button className="border text-[#929297] w-24 h-9 leading-9 text-center mr-5 text-[14px]">移出书架</button>
 		</div>
 	</div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from "react-redux"
+import { PersistGate } from 'redux-persist/integration/react'
 
 import 'normalize.css'
 import './index.css'
@@ -9,9 +11,7 @@ import { persistor, store } from './store'
 
 import reportWebVitals from './reportWebVitals'
 
-import './mock/index'
-import { Provider } from "react-redux"
-import { PersistGate } from 'redux-persist/integration/react'
+// import './mock/index'
 
 ReactDOM.render(
 	<React.StrictMode>
