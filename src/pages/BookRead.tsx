@@ -1,5 +1,5 @@
 import FontIcons from "../components/FontIcons"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { BookState, ChapterState } from "../service/serviceInterface"
 import { useEffect, useState } from "react"
 import { getBookChapter } from "../service/book"
@@ -11,17 +11,25 @@ type ParamsState = {
 
 const BookRead = () => {
 	const { bookId, chapterId } = useParams<ParamsState>()
+	const navigate = useNavigate()
 	const [bookInfo, setBookInfo] = useState<BookState | null>(null)
 	const [chapterInfo, setChapterInfo] = useState<ChapterState | null>(null)
-	console.log(bookId, chapterId)
+
+	const goChapter = (toChapterId: string | undefined) => {
+		if (!toChapterId) {
+			alert("没有啦!")
+			return
+		}
+		navigate(`/${bookId}/read_${toChapterId}`)
+	}
 
 	useEffect(() => {
 		(async () => {
 			const res = await getBookChapter(chapterId as string)
 			const {bookInfo, chapterInfo} = res.data
-			console.log(res)
 			setBookInfo(bookInfo)
 			setChapterInfo(chapterInfo)
+			window.scroll(0, 0)
 		})()
 	}, [chapterId])
 
@@ -60,20 +68,20 @@ const BookRead = () => {
 				</div>
 			</div>
 			<div className="read-content text-[#626267] leading-10 pb-20">
-				{chapterInfo?.content.split(/\s+/).map(p => <p>{p}</p>)}
+				{chapterInfo?.content.split(/\s+/).map((p, k) => <p key={k}>{p}</p>)}
 			</div>
 			<div className="pb-6 text-center">
 				<button
 					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]">加入收藏
 				</button>
 				<button
-					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]">上一章
+					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]" onClick={() => goChapter(chapterInfo?.prev_id)}>上一章
 				</button>
 				<button
 					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]">章节列表
 				</button>
 				<button
-					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]">下一章
+					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]" onClick={() => goChapter(chapterInfo?.next_id)}>下一章
 				</button>
 				<button
 					className="border border-[#f55] text-[#f55] w-24 h-9 leading-9 text-center mr-5 text-[14px]">错误反馈

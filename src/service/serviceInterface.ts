@@ -55,6 +55,8 @@ export interface ChapterState {
 	created_at: string;
 	title: string;
 	content: string;
+	prev_id: string;
+	next_id: string;
 }
 
 export interface BookState {
