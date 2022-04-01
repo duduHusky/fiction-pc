@@ -34,3 +34,56 @@ export interface UserInfoDataState {
 	rate_book_count: number;
 	comment_book_count: number;
 }
+
+export interface AuthorState {
+	book_count: number;
+	created_at: string;
+	name: string;
+	title: string;
+	uuid: string;
+}
+
+export interface CategoryState {
+	bookCount: number;
+	created_at: string;
+	title: string;
+	uuid: string;
+}
+
+export interface ChapterState {
+	uuid: string;
+	created_at: string;
+	title: string;
+	content: string;
+}
+
+export interface BookState {
+	uuid: string;
+	created_at: string;
+	title: string;
+	cover_image: string;
+	description: string;
+	rate: number;
+	rate_people_count: number;
+	click_count: number;
+	collect_count: number;
+	recommend_count: number;
+	last_update_time: string;
+	book_status: number;
+	author: AuthorState;
+	category: CategoryState;
+	update: ChapterState;
+}
+
+export interface ShelfBookState {
+	uuid: string;
+	created_at: string;
+	read_at: ChapterState;
+	book: BookState;
+	un_read: number;
+}
+
+export interface BookReadState {
+	bookInfo: BookState;
+	chapterInfo: ChapterState;
+}

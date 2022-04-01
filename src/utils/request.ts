@@ -2,7 +2,7 @@ import axios from "axios"
 import { getToken } from "./permission"
 
 const service = axios.create({
-	baseURL: 'http://localhost:9000/v1',
+	baseURL: 'http://localhost:9001/v1',
 	timeout: 500
 })
 
