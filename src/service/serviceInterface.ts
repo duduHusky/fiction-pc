@@ -89,3 +89,7 @@ export interface BookReadState {
 	bookInfo: BookState;
 	chapterInfo: ChapterState;
 }
+
+export interface SearchState {
+	bookList: Array<BookState>;
+}

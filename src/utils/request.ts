@@ -3,7 +3,7 @@ import { getToken } from "./permission"
 
 const service = axios.create({
 	baseURL: 'http://localhost:9001/v1',
-	timeout: 500
+	timeout: 1000
 })
 
 service.interceptors.request.use(

@@ -41,7 +41,7 @@ const BookRead = () => {
 				<FontIcons name="angle-right"/>
 				<Link to={`/category/${bookInfo?.category.uuid}`} className="mx-1">{bookInfo?.category.title}</Link>
 				<FontIcons name="angle-right"/>
-				<Link to={`/book/${bookId}`} className="mx-1">{bookInfo?.title}</Link>
+				<Link to={`/${bookId}`} className="mx-1">{bookInfo?.title}</Link>
 				<FontIcons name="angle-right"/>
 				<Link to="" className="ml-1">{chapterInfo?.title}</Link>
 			</span>
