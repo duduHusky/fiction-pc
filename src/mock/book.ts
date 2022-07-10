@@ -1,22 +1,20 @@
-import Mock from "mockjs"
-import { createBook } from "./data";
+import Mock from "mockjs";
+import { createBook, createUpdate } from "./data";
 
 const mockData = Mock.mock({
-    'bookList|10': [
-        createBook
-    ]
+    bookInfo: createBook(),
+    chapterInfo: createUpdate()
 })
 
 export default [
     {
-        url: RegExp('/api/book/search.*'),
+        url: RegExp('/api/book/chapter.*'),
         type: 'get',
-        isReg: true,
         response: () => {
             return {
                 code: 0,
                 data: mockData
             }
         }
-    },
+    }
 ]

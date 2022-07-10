@@ -2,10 +2,12 @@ import Mock from 'mockjs'
 
 import user from './user'
 import search from "./search";
+import book from "./book";
 
 const mocks = [
 	...user,
-    ...search
+    ...search,
+	...book
 ]
 
 for (const i of mocks) {
