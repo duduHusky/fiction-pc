@@ -8,7 +8,8 @@ import { setInfo, setToken } from "../store/user/userSlice"
 import classNames from "classnames"
 import FontIcons from "../components/FontIcons"
 import { setToken as setCookieToken } from "../utils/permission"
-import { LoginResponseDataState, ResponseState, UserInfoDataState } from "../service/serviceInterface"
+import { ResponseState, UserInfoDataState } from "../service/serviceInterface"
+import { LoginResponseDataState } from "../service/interface";
 
 const Login = () => {
 	const location = useLocation()

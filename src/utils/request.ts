@@ -2,7 +2,7 @@ import axios from "axios"
 import { getToken } from "./permission"
 
 const service = axios.create({
-	baseURL: process.env.NODE_ENV === "development" ? 'http://localhost:9001/v1' : 'http://api.fiction.vtmtea.com/v1',
+	baseURL: process.env.NODE_ENV === "development" ? 'http://localhost:3000/api' : 'http://api.fiction.vtmtea.com/v1',
 	timeout: 1000
 })
 

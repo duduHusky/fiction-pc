@@ -14,7 +14,7 @@ export function getBookChapterList(bookId: string) {
 }
 
 export function getBookSearch(s: string, page: number = 1, size: number = 10) {
-	return request.get<string, ResponseState<SearchState>>('/search', {
+	return request.get<string, ResponseState<SearchState>>('/book/search', {
 		params: {
 			s,
 			page,

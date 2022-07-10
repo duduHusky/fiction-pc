@@ -4,14 +4,7 @@ export interface ResponseState<T> {
 	data: T
 }
 
-export interface LoginRequestState {
-	username: string;
-	password: string;
-}
 
-export interface LoginResponseDataState {
-	token: string
-}
 
 export interface UserInfoDataState {
 	uuid: string;

@@ -9,7 +9,7 @@ export default function Layout() {
 		<TopNav />
 		<TopHead />
 		<Nav />
-		<div className="w-[75rem] self-center">
+		<div className="max-w-[75rem] self-center">
 			<Outlet />
 		</div>
 		<CopyRight />

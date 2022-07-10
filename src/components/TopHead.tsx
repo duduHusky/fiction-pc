@@ -31,7 +31,7 @@ export default function TopHead() {
 					</button>
 				</div>
 			</div>
-			<ul className="ml-16 flex items-center">
+			<ul className="ml-16 mr-3 flex items-center">
 				<li className="mr-7">
 					{isLogin && userInfo?.portrait ?
 						<img src={userInfo.portrait} height={20} width={20} className="inline-block rounded-full"/> :

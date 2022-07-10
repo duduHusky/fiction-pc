@@ -1,5 +1,6 @@
 import request from "../utils/request"
-import { LoginRequestState, LoginResponseDataState, ResponseState, UserInfoDataState } from "./serviceInterface"
+import { ResponseState, UserInfoDataState } from "./serviceInterface"
+import { LoginRequestState, LoginResponseDataState } from "./interface";
 
 
 export function login(data: LoginRequestState) {
