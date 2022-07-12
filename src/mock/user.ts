@@ -4,7 +4,7 @@ const Random = Mock.Random
 
 export default [
 	{
-		url: '/user/login',
+		url: '/api/user/login',
 		type: 'post',
 		response: () => {
 			return {
@@ -16,7 +16,7 @@ export default [
 		}
 	},
 	{
-		url: '/user/info',
+		url: '/api/user/info',
 		type: 'get',
 		response: () => {
 			return {

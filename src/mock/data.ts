@@ -5,8 +5,8 @@ const Random = Mock.Random
 
 export function createAuthor(): AuthorState {
     return {
-        book_count: 0,
-        created_at: "",
+        book_count: Random.integer(0, 99),
+        created_at: Random.datetime("yyyy-MM-dd HH:mm:ss"),
         name: Random.cname(),
         title: Random.ctitle(2, 7),
         uuid: Random.id()
@@ -16,7 +16,7 @@ export function createAuthor(): AuthorState {
 export function createCategory(): CategoryState {
     return {
         bookCount: 0,
-        created_at: "",
+        created_at: Random.datetime("yyyy-MM-dd HH:mm:ss"),
         title: Random.ctitle(2, 7),
         uuid: Random.id()
     }
@@ -28,8 +28,8 @@ export function createUpdate(): ChapterState {
         created_at: Random.datetime("yyyy-MM-dd HH:mm:ss"),
         title: Random.ctitle(2, 7),
         content: Random.cparagraph(800, 1000),
-        prev_id: "",
-        next_id: ""
+        prev_id: Random.id(),
+        next_id: Random.id()
     }
 }
 
