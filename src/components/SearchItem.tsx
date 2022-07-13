@@ -12,7 +12,7 @@ const SearchItem = (props: SearchItemProps) => {
 		<img src={book.cover_image} alt={book.title} className="w-20 h-28 mr-7"/>
 		<div className="flex flex-col justify-between">
 			<div className="flex items-baseline">
-				<div className="mr-16 text-[#f55] text-[18px]"><Link to={`/${book.uuid}`}>{book.title}</Link></div>
+				<div className="mr-16 text-[#f55] text-[18px]"><Link to={`/book/${book.uuid}`}>{book.title}</Link></div>
 				<div className="mr-7 text-[14px]">作者：<Link to={`/author/${book.author?.uuid}`}>{book.author?.name}</Link></div>
 				<div className="mr-7 text-[14px]">分类：<Link to={`/category/${book.category?.uuid}`}>{book.category?.title}</Link></div>
 				<div className="text-[14px] text-[#626267] ml-20">{book.collect_count} 人在读</div>

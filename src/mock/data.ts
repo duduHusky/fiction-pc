@@ -22,7 +22,7 @@ export function createCategory(): CategoryState {
     }
 }
 
-export function createUpdate(): ChapterState {
+export function createChapter(): ChapterState {
     return {
         uuid: Random.id(),
         created_at: Random.datetime("yyyy-MM-dd HH:mm:ss"),
@@ -48,7 +48,7 @@ export function createBook(): BookState {
         rate_people_count: Random.integer(0, 999),
         recommend_count: Random.integer(0, 999),
         title: Random.ctitle(2, 7),
-        update: createUpdate(),
+        update: createChapter(),
         uuid: Random.id()
     }
 }

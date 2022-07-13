@@ -40,12 +40,12 @@ const BookInfo = () => {
 			const res = await getBookInfo(bookId as string)
 			const chapters = await getBookChapterList(bookId as string)
 			setBookInfo(res.data)
-			setChapters(chapters.data)
+			chapters && setChapters(chapters.data)
 		})()
 	}, [bookId])
 
 	return <>
-		<div className="my-6">
+		<div className="my-6 pl-5">
 			<FontIcons name="house" color="#f55"/>
 			<span className="text-[14px] text-[#626267] ml-1">
 				<Link title="DuDuDu" to="/" className="mr-1">DuDuDu</Link>

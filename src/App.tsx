@@ -18,8 +18,8 @@ function App() {
 			<Routes>
 				<Route path={"/"} element={<HomeLayout />}>
 					<Route index element={<Home />}/>
-					<Route path=":bookId" element={<BookInfo />} />
-					<Route path=":bookId/read_:chapterId" element={<BookRead />} />
+					<Route path="/book/:bookId" element={<BookInfo />} />
+					<Route path="/book/:bookId/read_:chapterId" element={<BookRead />} />
 					<Route path="search/result" element={<SearchResult />} />
 				</Route>
 				<Route path={"/user"} element={<UserLayout />}>
